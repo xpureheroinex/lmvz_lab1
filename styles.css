@@ -1,0 +1,29 @@
+.body-index {
+    background: #9E9E9E url(images/bg2.png);
+    background-size: cover;
+    height: 100%;
+}
+
+.body-form {
+    background: #f5f5f5;
+}
+.btn {
+    background: #FFC107;
+    color: #F5F5F5;
+    border-radius: 25px;
+    width: 160px;
+    height: 45px;
+    box-shadow: 0 0 1px 1px #212121;
+}
+.btn:hover {
+    background: #e3a807;
+}
+
+#dropdownMenuButton {
+    padding: 10px;
+}
+#MenuButton {
+    margin-left: 43%;
+    margin-top:3%;
+}
+
