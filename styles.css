@@ -1,3 +1,8 @@
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .body-index {
     background: #9E9E9E url(images/bg2.png);
     background-size: cover;

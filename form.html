@@ -34,5 +34,83 @@
     </nav>
 </header>
 
+<main>
+    <p class="lead text-center" style="margin-top: 7%;">Для заказа визы заполните форму:</p>
+    <p class="text-muted text-center" style="margin-top: -1%">Обязательные поля обозначены звездочкой *</p>
+    <form>
+        <div class="form-row col-md-8" style="margin-left: 27%">
+            <div class="form-group col-md-8">
+                <label for="inputSurname">Фамилия*</label>
+                <input type="text" class="form-control" id="inputSurname" placeholder="Иванов">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputName">Имя*</label>
+                <input type="text" class="form-control" id="inputName" placeholder="Иван">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputEmail4">Email*</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="example@gmail.com">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputPhone">Номер телефона для обратной связи*</label>
+                <input type="number" class="form-control" id="inputPhone" placeholder="+38-095-000-00-00">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputCountry">Страна*</label>
+                <select id="inputCountry" class="form-control">
+                    <option selected disabled>Укажите страну</option>
+                    <option>Украина</option>
+                    <option>Россия</option>
+                    <option>Другое</option>
+                </select>
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputCity">Город*</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="Харьков">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputAddress">Адрес</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="ул. Целиноградская, 36">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputDestination">Страна назначения*</label>
+                <select id="inputDestination" class="form-control">
+                    <option selected disabled>Укажите страну</option>
+                    <option>США</option>
+                    <option>Польша</option>
+                    <option>Другое</option>
+                </select>
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputZip">Почтовый индекс</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputVisa">Вид визы*</label>
+                <input type="text" class="form-control" id="inputVisa" placeholder="Туристическая виза" disabled>
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputTime">Дата и время приема*</label>
+                <input type="datetime-local" class="form-control" id="inputTime">
+            </div>
+
+            <div class="form-group col-md-8">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        С необходимым списком документов ознакомлен(а)
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="window.location.href='final.html'"
+                style="margin-left: 43%; margin-bottom: 5%;">Оформить</button>
+    </form>
+</main>
+
+<footer>
+
+</footer>
 </body>
 </html>
