@@ -36,6 +36,8 @@
 
 <main>
     <p class="lead text-center" style="margin-top: 20%;">Спасибо за ваш заказ! Ожидаем Вас в выбранное Вами время по адресу:</p>
+    <p class="lead text-center" id="timeValue" style="margin-top: 20%" ></p>
+    <iframe src="form.html" style="display:none" id="sourcePage"></iframe>
     <p class="help text-center" style="margin-top: 1%;">г. Харьков, ул. Целиноградская, 36, 3 этаж</p>
 
     <button class="btn" type="button" onclick="window.location.href='index.html'"
@@ -45,6 +47,24 @@
 
 </main>
 
+<script>
+    function getCookie(name) {
+        var matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+    function getTime() {
+    let time = getCookie('time')
+    let display = document.getElementById('timeValue');
+    if (time.value !== "") {
+        display.innerHTML = time;
+    }
+    else {
+        display.innerText = 0;
+    }
+}</script>
 <footer>
 
 </footer>
