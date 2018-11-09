@@ -12,16 +12,18 @@ body {
 .body-form {
     background: #f5f5f5;
 }
-.btn {
+.btn-my {
     background: #FFC107;
     color: #F5F5F5;
     border-radius: 25px;
     width: 160px;
     height: 45px;
     box-shadow: 0 0 1px 1px #212121;
+    font-weight: 600;
 }
 .btn:hover {
     background: #e3a807;
+    color: #F5F5F5;
 }
 
 #dropdownMenuButton {
