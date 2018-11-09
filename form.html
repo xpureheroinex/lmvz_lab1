@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 
 </head>
 <body class="body-form">
 <header>
-    <nav  class="navbar fixed-top navbar-expand-sm" style="background-color:#3f3f3f;">
+    <nav class="navbar fixed-top navbar-expand-sm" style="background-color:#3f3f3f;">
         <a class="navbar-brand"><font color="#F5F5F5">Visa</font></a>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="nav navbar-nav">
@@ -18,16 +19,17 @@
                     <a class="nav-link" href="index.html"><font color="#F5F5F5">Главная</font></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><font color="#F5F5F5">Услуги</font></a>
+                    <a class="nav-link" href="services.html"><font color="#F5F5F5">Услуги</font></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><font color="#F5F5F5">Вопросы</font></a>
+                    <a class="nav-link" href="ques.html"><font color="#F5F5F5">Вопросы</font></a>
                 </li>
             </ul>
         </div>
         <div class="dropdown">
-            <button class="btn" type="button" onclick="openForm()" id="dropdownMenuButton" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Заказать</button>
+            <button class="btn btn-my" type="button" onclick="openForm()" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Заказать
+            </button>
 
         </div>
 
@@ -38,7 +40,7 @@
     <p class="lead text-center" style="margin-top: 7%;">Для заказа визы заполните форму:</p>
     <p class="text-muted text-center" style="margin-top: -1%">Обязательные поля обозначены звездочкой *</p>
     <form class="needs-validation" novalidate>
-        <div class="form-row col-md-8" style="margin-left: 27%">
+        <div class="form-row col-md-8" style="margin-left: 27%;">
             <div class="form-group col-md-8">
                 <label for="inputSurname">Фамилия*</label>
                 <input type="text" class="form-control is-req" id="inputSurname" placeholder="Иванов" required>
@@ -49,11 +51,13 @@
             </div>
             <div class="form-group col-md-8">
                 <label for="inputEmail4">Email*</label>
-                <input type="email" class="form-control is-req" id="inputEmail4" placeholder="example@gmail.com" required>
+                <input type="email" class="form-control is-req" id="inputEmail4" placeholder="example@gmail.com"
+                       required>
             </div>
             <div class="form-group col-md-8">
                 <label for="inputPhone">Номер телефона для обратной связи*</label>
-                <input type="number" class="form-control is-req" id="inputPhone" placeholder="+38-095-000-00-00" required>
+                <input type="number" class="form-control is-req" id="inputPhone" placeholder="+38-095-000-00-00"
+                       required>
             </div>
             <div class="form-group col-md-8">
                 <label for="inputCountry">Страна*</label>
@@ -101,7 +105,7 @@
                         С необходимым списком документов ознакомлен(а)
                     </label>
                     <div class="invalid-feedback" id="invalidCheckMessage" style="display: none">
-                        Пожалуйста, ознакомьтесь со списком документов, прежде чем подавать заяку
+                        Пожалуйста, ознакомьтесь со списком документов, прежде чем подавать заявку
                     </div>
                     <div class="invalid-feedback" id="invalidFieldMessage" style="display: none">
                         Пожалуйста, заполните все необходимые поля
@@ -110,9 +114,11 @@
             </div>
         </div>
 
-        <button type="button" class="btn" onclick="validateForm()"
-                style="margin-left: 43%; margin-bottom: 5%;">Оформить</button>
+        <button type="button" class="btn btn-my" onclick="validateForm()"
+                style="margin-left: 43%; margin-bottom: 5%;">Оформить
+        </button>
     </form>
+
 
     <script>
         function validateForm() {
@@ -136,22 +142,101 @@
             }
             if (document.getElementById('invalidFieldMessage').style.display === 'none' &&
                 document.getElementById('invalidCheckMessage').style.display === 'none') {
+                getTime();
                 window.location.href = 'final.html';
             }
         }
+
         function getTime() {
             var time = this.document.getElementById('inputTime');
+            var input = "";
             if (time.value !== "") {
-               document.cookie ="time:" + time.valueAsNumber;
+                input = time.value.toString();
+                let index = input.indexOf('T');
+                let year = input.substr(0, 4);
+                let month = input.substr(5, 2);
+                let day = input.substr(8, 2);
+                let timeValue = input.substr(11, 5);
+                let response = "Ждем вас " + day + " числа " + month + " месяца " + year + " года " + " в " + timeValue;
+                localStorage.setItem('time', response);
+                return response;
             }
             else {
-             return 0;
+                return 0;
             }
+        }
+
+        function openForm() {
+            window.location.href = 'types.html';
         }
     </script>
 </main>
 
 <footer>
+    <nav class="navbar  navbar-expand-sm" style="background-color:#3f3f3f;">
+    </nav>
+    <nav class="navbar  navbar-expand-sm" style="background-color:#3f3f3f;">
+
+
+        <div class="container">
+            <div class="float-left" style="color:#BDBDBD; text-align: center;"><h5>VISA это</h5>
+                <hr style="border-top: 1px solid #FFC107; width: 30px">
+                <p>100% гарантия получения необходимой визы</p>
+                <p>и прозрачность предоставляемых услуг.</p>
+                <center>
+                    <button class="btn" href="#" style="background-color:#3f3f3f;"><img class="d-block w-10"
+                                                                                        src="images/if_facebook_986944.png">
+                    </button>
+                </center>
+
+            </div>
+            <br>
+            <div class="float-right" style="color:#BDBDBD;text-align: center;"><h5>Свяжитесь с нами</h5>
+                <hr style="border-top: 1px solid #FFC107; width: 30px">
+
+                <p>г.Харьков,ул.Целиноградская 36, 3 этаж</p>
+                <p>Viber/WhatsApp: <a href="#" style="color:#BDBDBD;">+38 (063) 873 7888</a></p>
+                <p><a href="#" style="color:#BDBDBD;">info@visa@gmail.com</a></p></div>
+            <br>
+            <div class="float-none" style="color:#BDBDBD;text-align: center;"><h5>Остались вопросы</h5>
+                <hr style="border-top: 1px solid #FFC107; width: 30px">
+
+                <p>Оставьте свой телефон и наш</p>
+                <p>менеджер перезвонит вам</p>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Ваш номер" aria-label="Recipient's username"
+                           aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-warning" type="button" id="button-addon2" data-toggle="modal"
+                                data-target="#myModal" style="color:#BDBDBD;"><img class="d-block w-10"
+                                                                                   src="images/2303199-24.png"
+                                                                                   alt="First slide"></button>
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                                    </div>
+                                    <br>
+                                    <div style="text-align: center;"><p>Ожидайте звонка от администратора!</p></div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </nav>
+    <nav class="navbar  navbar-expand-sm" style="background-color:#212121;">
+
+        <font color="#BDBDBD">2018 © Visa. Все права защищены.</font>
+    </nav>
 
 </footer>
 </body>
